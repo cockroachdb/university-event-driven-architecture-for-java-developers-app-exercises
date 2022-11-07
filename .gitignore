@@ -1,14 +1,41 @@
+### certs & keys ###
+*.crt
+*.pem
+*.key
+ssl
+
+### CockroachDB ###
+inflight_trace_dump
+
 # Compiled class file
 *.class
+
+### Editors ###
+.*.swp
+.idea
+*.iws
+*.iml
+*.ipr
+*.sublime-project
+*.sublime-workspace
+.vscode
+
+### Java ###
+target/
 
 # Log file
 *.log
 
-# BlueJ files
-*.ctxt
+### Mac ###
+.DS_Store
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
+
+### NodeJS ###
+build/
+node_modules
+package-lock.json
 
 # Package Files #
 *.jar

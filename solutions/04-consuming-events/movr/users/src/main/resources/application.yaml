@@ -1,0 +1,21 @@
+server:
+  port: 36260
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:26257/movr_users
+    username: demo
+    password: movr
+
+  jpa:
+    show-sql: false
+    database-platform: org.hibernate.dialect.CockroachDB201Dialect
+
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+logging:
+  level:
+    org.springframework.web: INFO
+    org.hibernate.SQL: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: INFO

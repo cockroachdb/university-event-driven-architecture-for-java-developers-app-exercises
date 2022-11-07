@@ -1,0 +1,26 @@
+server:
+  port: 36257
+
+spring:
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+logging:
+  level:
+    org.springframework.web: INFO
+
+auth-service:
+  host: localhost
+  port: 36260
+
+user-service:
+  host: localhost
+  port: 36260
+
+vehicle-service:
+  host: localhost
+  port: 36258
+
+rides-service:
+  host: localhost
+  port: 36259
