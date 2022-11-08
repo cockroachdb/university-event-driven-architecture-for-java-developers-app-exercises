@@ -7,7 +7,7 @@ SOLUTIONS_FOLDER="solutions"
 if [[ "$OSTYPE" == "linux-gnu"* ]]
 then
     SOLUTIONS=($(ls $SOLUTIONS_FOLDER | grep '^[0-9]'))
-else
+else  # added this to enable local tests on mac
     SOLUTIONS=($(ls --color=never $SOLUTIONS_FOLDER | grep --color=never '\d\d-'))
 fi
 SUBFOLDERS=("movr/vehicles" "movr/users" "movr/rides" "movr/ui_gateway")
@@ -30,11 +30,11 @@ function help {
 function verify_all_exercises {    
     local WORKING=$(pwd)
 
-#     echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#     echo VERIFYING STUDENT FOLDER $EXERCISES_FOLDER
-#     echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#     cd $EXERCISES_FOLDER
-#     run_all_tests
+    echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    echo VERIFYING STUDENT FOLDER $EXERCISES_FOLDER
+    echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    cd $EXERCISES_FOLDER
+    run_all_tests
     cd $WORKING
 
     for solution in "${SOLUTIONS[@]}"
