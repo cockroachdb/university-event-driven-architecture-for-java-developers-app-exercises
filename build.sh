@@ -4,12 +4,7 @@ IFS=$'\n\t'
 
 EXERCISES_FOLDER="exercises"
 SOLUTIONS_FOLDER="solutions"
-if [[ "$OSTYPE" == "linux-gnu"* ]]
-then
-    SOLUTIONS=($(ls $SOLUTIONS_FOLDER | grep '^[0-9]'))
-else  # added this to enable local tests on mac
-    SOLUTIONS=($(ls --color=never $SOLUTIONS_FOLDER | grep --color=never '\d\d-'))
-fi
+SOLUTIONS=($(ls --color=never $SOLUTIONS_FOLDER | grep '^[0-9]'))
 SUBFOLDERS=("movr/vehicles" "movr/users" "movr/rides" "movr/ui_gateway")
 COMMAND=${1:-"help"}
 
