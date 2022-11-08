@@ -1,0 +1,29 @@
+server:
+  port: 36258
+
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: vehicles
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties.spring.json.value.default.type: io.roach.movrapi.events.KafkaMessage
+  datasource:
+    url: jdbc:postgresql://localhost:26257/movr_vehicles
+    username: demo
+    password: movr
+
+  jpa:
+    show-sql: false
+    database-platform: org.hibernate.dialect.CockroachDB201Dialect
+
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+logging:
+  level:
+    org.springframework.web: INFO
+    org.hibernate.SQL: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: INFO
